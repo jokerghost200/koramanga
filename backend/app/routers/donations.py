@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Header
 from sqlalchemy.orm import Session
-from database import SessionLocal
-from schemas import DonationCreate, DonationOut
-import crud, models
+from app.database import SessionLocal
+from app.schemas import DonationCreate, DonationOut
+from app import crud, models
 
 router = APIRouter(prefix="/api/donations", tags=["donations"])
 

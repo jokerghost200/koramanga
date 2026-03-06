@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Header
 from sqlalchemy.orm import Session
-from database import SessionLocal
-from schemas import MangaCreate, MangaUpdate, MangaOut, MangaDetailOut, CommentCreate, CommentOut
-import crud, models
+from app.database import SessionLocal
+from app.schemas import MangaCreate, MangaUpdate, MangaOut, MangaDetailOut, CommentCreate, CommentOut
+from app import crud, models
 
 router = APIRouter(prefix="/api/mangas", tags=["mangas"])
 

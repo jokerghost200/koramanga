@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Header
 from sqlalchemy.orm import Session
-from database import SessionLocal
-from schemas import ChapterCreate, ChapterUpdate, ChapterOut, ChapterDetailOut, ChapterPageCreate, ChapterPageOut
-import crud, models
+from app.database import SessionLocal
+from app.schemas import ChapterCreate, ChapterUpdate, ChapterOut, ChapterDetailOut, ChapterPageCreate, ChapterPageOut
+from app import crud, models
 from datetime import datetime
 
 router = APIRouter(prefix="/api/chapters", tags=["chapters"])

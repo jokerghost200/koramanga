@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Header, Response
-from database import SessionLocal
-from utils import security as security_utils
+from app.database import SessionLocal
+from app.utils import security as security_utils
 
 router = APIRouter(prefix="/api/security", tags=["security"])
 

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from database import engine, Base
-from routers import auth, users, mangas, chapters, coins, donations, marketplace, security as security_router
-import models
+from app.database import engine, Base
+from app.routers import auth, users, mangas, chapters, coins, donations, marketplace, security as security_router
+from app import models
 
 # Créer les tables
 Base.metadata.create_all(bind=engine)

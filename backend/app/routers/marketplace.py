@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException, Header
 from sqlalchemy.orm import Session
-from database import SessionLocal
-from schemas import (
+from app.database import SessionLocal
+from app.schemas import (
     ShopCreate, ShopUpdate, ShopOut, ShopDetailOut,
     ProductCreate, ProductUpdate, ProductOut,
     OrderCreate, OrderOut, OrderDetailOut, OrderItemOut
 )
-import crud, models
+from app import crud, models
 
 router = APIRouter(prefix="/api/marketplace", tags=["marketplace"])
 
