@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from app.database import engine, Base
@@ -29,7 +29,7 @@ app.include_router(security_router.router)
 
 
 @app.get("/")
-def root(request):
+def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
