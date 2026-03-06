@@ -5,3 +5,4 @@ pydantic
 psycopg2-binary  # si tu utilises Postgres
 python-dotenv     # si tu utilises des variables d'environnement
 pydantic[email]  # pour la validation des emails
+Jinja2>=3.1.2
