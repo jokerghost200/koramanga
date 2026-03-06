@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from app.database import engine, Base
 from app.routers import auth, users, mangas, chapters, coins, donations, marketplace, security as security_router
 from app import models
@@ -12,6 +14,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Configurer les templates
+templates = Jinja2Templates(directory="app/templates")
+
 # Enregistrer les routes
 app.include_router(auth.router)
 app.include_router(users.router)
@@ -24,12 +29,8 @@ app.include_router(security_router.router)
 
 
 @app.get("/")
-def root():
-    return {
-        "message": "Bienvenue sur l'API KM Store",
-        "version": "1.0.0",
-        "docs": "/docs"
-    }
+def root(request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.get("/health")
